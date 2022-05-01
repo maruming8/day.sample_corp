@@ -1,0 +1,17 @@
+@use '../foundation/index' as f;
+
+.c-section__title{
+    font-size: 36px;
+    font-family: f.$font-Eng;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 1.666em;
+
+    @include f.mq('sp'){
+        font-size: 30px;
+        padding-bottom: 1.366em;
+    }
+}
+
+
+

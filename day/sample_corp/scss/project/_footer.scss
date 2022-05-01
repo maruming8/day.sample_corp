@@ -1,0 +1,126 @@
+@use "../foundation/index" as  f;
+
+.p-footer__linkWrap{
+    @include f.mq('sp'){
+        width: 100%;
+        text-align: center;
+    }
+}
+.p-footer__sns{
+    vertical-align: middle;
+
+    a{
+        color: f.$color-footer-font;
+        display: inline-block;
+
+        &:not(:first-child){
+            margin-left: 1.625em;
+
+            @include f.mq('sp'){
+                margin-left: 2.75em;
+            }
+        }
+
+        &:focus,
+        &:hover{
+            transform: scale(1.1,1.1);
+        }
+    }
+
+    .fa-twitter{
+        font-size: 36px;
+        @include f.mq('sp'){
+            font-size: 38px;
+        }
+    }
+    .fa-facebook-square{
+        font-size: 41px;
+    }
+}
+.p-footer__link{
+    margin-top: 2em;
+
+    @include f.mq('sp'){
+        margin-top: 2.12em;
+    }
+
+    a{
+        color: f.$color-footer-link;
+
+        &:not(:first-child){
+            margin-top: 0.875em;
+        }
+
+        &:focus,
+        &:hover{
+            opacity: 0.7;
+        }
+
+        @include f.mq('sp'){
+            font-size: 0.875rem;
+
+            &:not(:first-child){
+                margin-top: 1.214em;
+            }    
+        }
+    }
+}
+.p-footer__box{
+    font-family: f.$font-Eng;
+
+    @include f.mq('sp'){
+        width: 100%;
+        text-align: center;
+        margin-top: 1.6875em;
+    }
+}
+.p-footer__logo{
+    color: f.$palette-silver;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 0.15em 0;
+
+    @include f.mq('sp'){
+        font-size: 34px;
+        letter-spacing: -0.04em;
+        padding: 0.235em 0;
+    }
+}
+.p-footer__copyright{
+    color: f.$color-footer-font;
+    text-align: right;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+
+    @include f.mq('sp'){
+        text-align: center;
+    }
+}
+
+.p-toTop{
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+
+    @include f.mq('sp'){
+        right: 16px;
+        bottom: 14px;
+    }
+
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.1, 1.1);
+    }
+
+    &.is-show{
+        visibility: visible;
+        opacity: 1;
+    }
+
+}

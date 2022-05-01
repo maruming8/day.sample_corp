@@ -1,0 +1,132 @@
+@use "../foundation/index" as f;
+
+//swiper
+.swiper {
+    padding-left: 3.75em;//左右の余白はcontainerに指定する 
+    height: 428px;
+
+    @include f.mq('sp'){
+        padding-left: 1em;
+        height: 300px;
+    }    
+        .swiper-wrapper { 
+             
+            .swiper-slide {
+                // slideに任意の幅と高さ指定
+                width: 400px;
+                height: 366px;
+
+                @include f.mq('sp'){
+                    width: 274px;
+                    height: 253px;
+                }
+            }
+        }
+}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: 0;
+    left: 2px;
+
+    @include f.mq('sp'){
+        left: 1px;
+    }
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-left: 1em;
+}
+.swiper-pagination{
+    text-align: left;
+    padding-left: 0.25em;
+
+    @include f.mq('sp'){
+        text-align: center;
+        padding-left: 0.5em;
+    }
+
+    .swiper-pagination-bullet{
+        width: 12px;
+        height: 12px;
+        opacity: 1;
+        background: f.$color-pagination-bg;
+        border-radius: 50%;
+        position: relative;
+    
+        &-active{
+            &::after{
+                content: "";
+                width: 20px;
+                height: 20px;
+                background: transparent;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                border: 1px solid f.$color-pagination-bg;
+                border-radius: 50%;
+            }
+            
+        }
+    
+        &:first-child{
+          margin-left: 0;
+        }
+    }   
+}
+
+
+//
+.p-results__title{
+    color: f.$color-sectionD-title;
+    text-align: left;
+
+    @include f.mq('sp'){
+        text-align: center;
+    }
+}
+.p-results__card{
+    width: 400px;
+
+    @include f.mq('sp'){
+        width: 274px;
+    }
+}
+
+.p-results__img{
+    padding-top: 62.5%;
+}
+.p-results__body{
+    background-color: f.$color-card-bg;
+    padding: 0.75em 1em 1.25em 1em;
+
+    @include f.mq('sp'){
+        padding: 0.5em 0.875em 0.625em 0.75em;
+    }
+}
+.p-results__lead{
+    font-weight: bold;
+    font-size: 1.25rem;
+
+    @include f.mq('sp'){
+        font-size: 0.875rem;
+        letter-spacing: -0.016em;
+    }
+}
+.p-results__text{
+    line-height: (24 / 16);
+    margin-top: 0.25em;
+
+    @include f.mq('sp'){
+        font-size: 0.75rem;
+        margin-top: 0.5em;
+    }
+}
+.p-results__btnWrap{
+    margin-top: 2.33em;
+    
+    @include f.mq('sp'){
+        text-align: center;
+        margin-top: 1.3em;
+    }
+}
+.p-results__btn{
+}

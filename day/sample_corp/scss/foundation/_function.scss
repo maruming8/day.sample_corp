@@ -1,0 +1,38 @@
+@use 'setting' as s;
+
+//メディアクエリ
+$breakpoint: (
+  'sp': 'screen and (max-width: 767px)',
+  'tab': 'screen and (min-width: 768px) and (max-width: #{(s.$layout-with-inner)-1px})', 
+  'pc': 'screen and (min-width: #{s.$layout-with-inner})'
+)!default;
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+   @content;
+  }
+}
+
+
+//レイアウト
+@mixin layout(){
+  width: s.$layout-with-inner;
+  max-width: 100%;
+  padding: 0 40px;
+  margin: 0 auto;
+
+  @include mq('sp'){
+    padding: 0 16px;
+  }
+}
+
+//テキスト
+
+@mixin text() {
+  line-height: (24 / 16);
+
+  @include mq('sp'){
+    font-size: 0.875rem;
+    line-height: (20 / 14);
+    }
+}

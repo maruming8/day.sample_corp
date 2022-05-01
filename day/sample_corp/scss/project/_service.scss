@@ -1,0 +1,67 @@
+@use "../foundation/index" as  f;
+
+.p-service__title{
+    color: f.$color-sectionD-title;
+}
+.p-service__cards{
+    background: f.$color-card-bg;
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 5px 12px f.$color-section-shadow;
+    padding: 3.75em 2.75em;
+
+    @include f.mq('sp'){
+        padding: 2.5em 1em 2.4em;
+        width: 343px;
+    }
+
+    .p-service__item{ 
+        flex: 0 1 33.333%;
+
+        &:not(:first-child){
+            margin-left: calc(90px / 870px * 100%);
+
+            @include f.mq('sp'){
+                margin-left: 0;
+            }
+        }
+    }
+}
+.p-service__img{
+    padding-top: 64px;
+
+    img{
+        width: 50px;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+.p-service__body{
+
+}
+.p-service__lead{
+    font-family: f.$font-Eng;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    line-height: (28 / 20);
+    text-align: center;
+    margin-top: 0.3em;
+
+    @include f.mq('sp'){
+        line-height: (24 / 20);
+        margin-top: 0.4em;
+        padding-left: 0.3em;
+    }
+}
+.p-service__text{
+    margin-top: 0.75em;
+    letter-spacing: -0.13em;
+
+    @include f.mq('sp'){
+        margin-top: 0.9375em;
+        letter-spacing: -0.026em;
+        line-height: 1.7;
+    }
+}

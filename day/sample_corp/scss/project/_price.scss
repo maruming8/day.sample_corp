@@ -1,0 +1,62 @@
+@use "../foundation/index" as  f;
+
+.p-price__title{
+}
+.p-price__list{
+    border: 1px solid f.$color-price-border;
+    font-size: 1.5rem;
+    font-family: f.$font-Eng;
+    font-weight: 600;
+    line-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include f.mq('sp'){
+        font-size: 1.25rem;
+        line-height: 55px;
+    }
+
+    dt,dd{
+        height: 60px;
+        border-bottom: 1px solid f.$color-price-border;
+        
+        &:last-child{
+            border: none;
+        }
+
+        @include f.mq('sp'){
+            height: 55px;
+        }
+    }
+
+    dt{
+        width: 262px;
+        background: f.$color-dt-bg;
+        color: f.$color-dt-font;
+        text-align: center;
+
+        @include f.mq('sp'){
+            width: 100px;
+        }
+    }
+    dd{
+        width: calc(100% - 262px);
+        background: f.$color-dd-bg;
+        padding-left: 1.583em;
+
+        @include f.mq('sp'){
+            width: calc(100% - 100px);
+            padding-left: 1em;
+            letter-spacing: -0.02em;
+        }
+    }
+}
+.p-price__comment{
+    font-size: 0.75rem;
+    margin-top: 0.46em;
+    letter-spacing: 0.13em;
+
+    @include f.mq('sp'){
+        margin-top: 0.33em;
+    }
+}
