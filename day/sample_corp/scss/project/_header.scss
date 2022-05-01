@@ -145,6 +145,7 @@
 
     @include f.mq('sp'){
         display: block;
+        cursor: pointer;
     }
 }
    
