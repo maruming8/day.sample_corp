@@ -1,0 +1,80 @@
+@use "../foundation/index" as  f;
+
+.c-btn{
+    display: inline-block;
+    max-width: 100%;
+    padding: 1em 3.85em;  
+    font-size: 1.25rem; 
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    white-space: nowrap;
+    cursor: pointer;
+
+    @include f.mq('sp'){
+        padding: 0.7em 4.84em;
+    }
+}
+.c-btn--light{
+    background-color: f.$color-btnL-bg;
+    border: 1px solid f.$color-btnL-border;
+    color: f.$color-btnL-font;
+    font-family: f.$font-Eng;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+
+    @include f.mq('sp'){
+        letter-spacing: 0.1em;
+    }
+
+    &:focus,
+    &:hover{
+        background-color: f.$color-btnD-bg;
+        color: f.$color-btnD-font;
+        border-color: f.$color-btnD-border;
+    }
+}
+.c-btn--dark{
+    background-color: f.$color-btnD-bg;
+    border: 1px solid f.$color-btnD-border;
+    color: f.$color-btnD-font;
+    font-family: f.$font-Eng;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+
+    @include f.mq('sp'){
+        letter-spacing: 0.1em;
+    }
+
+    &:focus,
+    &:hover{
+        background-color: f.$color-btnL-bg;
+        color: f.$color-btnL-font;
+        border-color: f.$color-btnL-border;
+    }
+}
+.c-btn--conversion{
+    padding: 0.444em 2.1em;
+    background-color: f.$color-contactBtn-bg;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px #{f.$color-contactBtn-shadow};
+    color: f.$color-contactBtn-font;
+    font-weight: bold;
+
+    &:disabled{
+        background-color: f.$color-contactBtn-disabled;
+        pointer-events: none;
+    }
+
+    @include f.mq('sp'){
+        width: 222px;
+        padding: 0.6875em 0;
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    &:focus,
+    &:hover{
+            background-color: f.$color-contactBtn-hover;
+    }
+
+}
